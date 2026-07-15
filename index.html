@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M. Fabricio Perez · Professor of Finance, Wilfrid Laurier University</title>
+<meta name="description" content="M. Fabricio Perez is the Arthur Wesley Downe Professor of Finance and Vice Dean at the Lazaridis School of Business & Economics, Wilfrid Laurier University. Research in financial econometrics, price discovery, and factor models; academic leadership and governance.">
+<meta name="author" content="M. Fabricio Perez">
+<link rel="canonical" href="https://fabricioperez.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="M. Fabricio Perez · Professor of Finance">
+<meta property="og:description" content="Arthur Wesley Downe Professor of Finance and Vice Dean, Lazaridis School of Business & Economics, Wilfrid Laurier University.">
+<meta property="og:url" content="https://fabricioperez.com/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23F8F4EC'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%239B7B34'%3EFP%3C/text%3E%3C/svg%3E">
+<style>
+  /* ============================================================
+     M. Fabricio Perez - personal site  ·  Editorial edition
+     Two type families: Georgia (serif) + a system sans for small labels.
+     Warm ivory ground, quiet antique-gold accent. No external requests.
+     ============================================================ */
+
+  :root {
+    --paper:     #F8F4EC;
+    --surface:   #FFFDF8;
+    --ink:       #24201A;
+    --ink-2:     #4C453B;
+    --muted:     #8B7F6C;
+    --hairline:  #E4DBC9;
+    --hairline-2:#D6CBB4;
+    --gold:      #9B7B34;
+    --gold-text: #7A5C1E;
+    --gold-soft: #EFE6D2;
+
+    --maxw: 1000px;
+    --readw: 800px;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    --sm:    0.78rem;
+    --base:  1.05rem;
+    --title: 1.35rem;
+    --name:  clamp(1.7rem, 3.6vw, 2.3rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:#1A1611; --surface:#221D16; --ink:#EEE6D6; --ink-2:#CFC5B0; --muted:#9C9078;
+      --hairline:#342D22; --hairline-2:#453C2D; --gold:#CBA555; --gold-text:#D9B968; --gold-soft:#2A2318;
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#F8F4EC; --surface:#FFFDF8; --ink:#24201A; --ink-2:#4C453B; --muted:#8B7F6C;
+    --hairline:#E4DBC9; --hairline-2:#D6CBB4; --gold:#9B7B34; --gold-text:#7A5C1E; --gold-soft:#EFE6D2;
+  }
+  :root[data-theme="dark"] {
+    --paper:#1A1611; --surface:#221D16; --ink:#EEE6D6; --ink-2:#CFC5B0; --muted:#9C9078;
+    --hairline:#342D22; --hairline-2:#453C2D; --gold:#CBA555; --gold-text:#D9B968; --gold-soft:#2A2318;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--serif); font-size: var(--base); line-height: 1.7;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px;
+      text-underline-offset: 3px; text-decoration-color: var(--hairline-2); }
+  a:hover { color: var(--gold-text); text-decoration-color: var(--gold); }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(1.15rem, 4vw, 2.25rem); }
+
+  .label { font-family: var(--sans); font-size: var(--sm); font-weight: 600; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--gold-text); }
+
+  .ic { width: 1.05em; height: 1.05em; flex: none; fill: none; stroke: currentColor;
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ---------- Nav ---------- */
+  .nav { position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--hairline); }
+  .nav-inner { display: flex; align-items: center; gap: 1rem; min-height: 52px; }
+  .nav-links { display: flex; gap: .1rem; margin-left: auto; align-items: center; flex-wrap: wrap; }
+  .nav-links a { font-family: var(--sans); font-size: var(--sm); font-weight: 500; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--ink-2); text-decoration: none; padding: .45rem .55rem; }
+  .nav-links a:hover { color: var(--gold-text); }
+  .theme-btn { font-family: var(--sans); font-size: var(--sm); letter-spacing: .1em; text-transform: uppercase;
+    background: transparent; border: 1px solid var(--hairline-2); color: var(--ink-2);
+    padding: .35rem .6rem; border-radius: 2px; cursor: pointer; margin-left: .4rem; }
+  .theme-btn:hover { color: var(--gold-text); border-color: var(--gold); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: clamp(2.6rem, 7vw, 4.5rem) clamp(1.8rem, 4vw, 2.6rem); }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: clamp(1.6rem, 5vw, 2.8rem); align-items: center; }
+  @media (min-width: 720px) { .hero-grid { grid-template-columns: auto 1fr; } }
+
+  .portrait { width: clamp(150px, 26vw, 200px); aspect-ratio: 4/5; overflow: hidden;
+    background: linear-gradient(160deg, var(--gold-soft), var(--surface));
+    border: 1px solid var(--hairline-2); }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%;
+    display: block; filter: saturate(.94); }
+
+  .hero .kicker { margin: 0 0 1rem; }
+  h1.name { font-family: var(--serif); font-weight: 400; font-size: var(--name); line-height: 1.05;
+    letter-spacing: -.01em; margin: 0 0 .9rem; color: var(--ink); text-wrap: balance; }
+  .roles { font-size: var(--base); line-height: 1.5; color: var(--ink-2); margin: 0 0 1.3rem; max-width: 42ch; }
+  .roles b { font-weight: 700; color: var(--ink); }
+  .rule-gold { width: 48px; height: 2px; background: var(--gold); margin: 0 0 1.3rem; border: 0; }
+
+  .herolinks { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; font-family: var(--sans); font-size: var(--sm); }
+  .herolinks a { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none; color: var(--ink-2);
+    border-bottom: 1px solid var(--hairline-2); padding-bottom: 2px; }
+  .herolinks a:hover { color: var(--gold-text); border-color: var(--gold); }
+  .herolinks a.lead { color: var(--ink); font-weight: 600; border-color: var(--gold); }
+
+  /* ---------- Sections ---------- */
+  section { padding-block: clamp(2.4rem, 5.5vw, 4rem); border-top: 1px solid var(--hairline); scroll-margin-top: 62px; }
+  .sec-head { margin-bottom: 1.6rem; }
+  .sec-head .label { display: block; }
+  p { max-width: var(--readw); }
+  .prose { max-width: var(--readw); }
+  .prose p { color: var(--ink-2); margin: 0; }
+  .prose p + p { margin-top: 1.05rem; }
+  .prose b, .prose strong { color: var(--ink); font-weight: 700; }
+  em, i { font-style: italic; }
+  h2.title { font-family: var(--serif); font-weight: 400; font-size: var(--title); line-height: 1.15;
+    margin: 0; color: var(--ink); text-wrap: balance; max-width: 30ch; }
+
+  .subhead { margin: 2.2rem 0 1.2rem; display: flex; align-items: baseline; gap: .8rem; }
+  .subhead:first-of-type { margin-top: 0; }
+  .subhead .label { color: var(--ink); }
+  .subhead .count { font-family: var(--sans); font-size: var(--sm); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .subhead::after { content: ""; flex: 1; height: 1px; background: var(--hairline); align-self: center; }
+
+  /* ---------- Publications (cover + result) ---------- */
+  .publist { display: flex; flex-direction: column; max-width: var(--readw); }
+  .field { font-family: var(--sans); font-size: var(--sm); font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gold-text); margin: 1.9rem 0 0; }
+  .field:first-child { margin-top: .4rem; }
+  .field + .pub { border-top: 0; padding-top: .8rem; }
+  .pub { display: grid; grid-template-columns: 84px 1fr; gap: 0 1.4rem; align-items: start;
+    padding: 1.4rem 0; border-top: 1px solid var(--hairline); }
+  .pub:first-child { border-top: 0; }
+  .pub-cover { display: block; width: 84px; }
+  .pub-cover img { width: 100%; height: auto; display: block; border: 1px solid var(--hairline-2); border-radius: 1px; }
+  .pub-cover.is-icon { aspect-ratio: 3/4; display: grid; place-items: center;
+    background: var(--surface); border: 1px solid var(--hairline-2); border-radius: 1px; text-decoration: none; }
+  .pub-cover.is-icon .pic { width: 42%; height: 42%; fill: none; stroke: var(--muted);
+    stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  a.pub-cover:hover { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .pub-body { min-width: 0; }
+  .pub-body h3 { font-family: var(--serif); font-weight: 400; font-size: 1.2rem; line-height: 1.25;
+    margin: 0 0 .3rem; color: var(--ink); text-wrap: balance; }
+  .pub-body h3 a { color: inherit; text-decoration: none; }
+  .pub-body h3 a:hover { color: var(--gold-text); text-decoration: underline; text-decoration-color: var(--gold); }
+  .pub-result { margin: 0 0 .45rem; color: var(--ink-2); font-size: var(--base); max-width: 64ch; }
+  .pub-cite { margin: 0; color: var(--muted); font-size: .95rem; }
+  .pub-cite .venue { font-style: italic; }
+  .pub-cite .coauth { color: var(--muted); }
+  .pub-cite .award { display: inline-block; margin-left: .15rem; font-family: var(--sans); font-size: .66rem;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--gold-text); border-bottom: 1px solid var(--gold); }
+
+  /* Working papers */
+  ul.plain { list-style: none; margin: 0; padding: 0; max-width: var(--readw); }
+  ul.plain > li { padding: .9rem 0; border-top: 1px solid var(--hairline); }
+  ul.plain > li:first-child { border-top: 0; }
+  .wp-title { color: var(--ink); }
+  .wp-status { font-family: var(--sans); font-size: var(--sm); letter-spacing: .05em; text-transform: uppercase;
+    color: var(--muted); border: 1px solid var(--hairline-2); border-radius: 2px; padding: .05rem .4rem;
+    margin-left: .5rem; white-space: nowrap; }
+  .wp-desc { color: var(--ink-2); font-size: var(--base); margin-top: .3rem; max-width: 72ch; }
+
+  /* Meta lists (leadership, grants) */
+  .metalist { list-style: none; margin: 0; padding: 0; max-width: var(--readw); }
+  .metalist li { display: grid; grid-template-columns: 1fr auto; gap: .3rem 1.5rem; align-items: baseline;
+    padding: .85rem 0; border-top: 1px solid var(--hairline); }
+  .metalist li:first-child { border-top: 0; }
+  .metalist .m-main { color: var(--ink); font-weight: 700; }
+  .metalist .m-sub { display: block; color: var(--ink-2); font-weight: 400; margin-top: .15rem; }
+  .metalist .m-right { font-family: var(--sans); font-size: var(--sm); letter-spacing: .03em; color: var(--muted);
+    white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  /* Teaching */
+  .courses { max-width: var(--readw); }
+  .course { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: baseline;
+    padding: .8rem 0; border-top: 1px solid var(--hairline); }
+  .course:first-child { border-top: 0; }
+  .course .code { font-family: var(--sans); font-size: var(--sm); letter-spacing: .04em; color: var(--gold-text); }
+  .course .cname { color: var(--ink); }
+  .course .clevel { color: var(--muted); font-style: italic; }
+
+  /* Link lists (More, Contact) */
+  .linklist { display: flex; flex-direction: column; gap: .6rem; }
+  .linklist a { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; color: var(--ink-2);
+    width: fit-content; }
+  .linklist a span { border-bottom: 1px solid var(--hairline-2); padding-bottom: 2px; }
+  .linklist a:hover { color: var(--gold-text); }
+  .linklist a:hover span { border-color: var(--gold); }
+
+  /* Academic genealogy */
+  .gene-intro { max-width: var(--readw); color: var(--ink-2); margin: 0 0 1.6rem; }
+  .lineage { position: relative; max-width: 32rem; margin: 0 0 1.4rem; padding: 0; list-style: none; }
+  .lineage::before { content: ""; position: absolute; left: 27px; top: 30px; bottom: 30px; width: 2px; background: var(--hairline-2); }
+  .gen { position: relative; z-index: 1; display: grid; grid-template-columns: 56px 1fr auto; gap: 0 1rem;
+    align-items: center; padding: .5rem 0; }
+  .gen-av { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background: var(--surface);
+    border: 1px solid var(--hairline-2); display: grid; place-items: center; }
+  .gen-av img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.9); }
+  .gen-av .mono { font-family: var(--serif); color: var(--gold-text); font-size: 1.02rem; letter-spacing: .02em; }
+  .gen.is-me .gen-av { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-soft); }
+  .gen-name { color: var(--ink); font-weight: 700; }
+  .gen-name a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px;
+    text-decoration-color: var(--hairline-2); text-underline-offset: 2px; }
+  .gen-name a:hover { color: var(--gold-text); text-decoration-color: var(--gold); }
+  .gen-role { color: var(--muted); font-size: .92rem; }
+  .gen-year { font-family: var(--sans); font-size: var(--sm); color: var(--gold-text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .gene-source { margin-top: 1.2rem; font-size: .9rem; color: var(--muted); max-width: var(--readw); }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: var(--readw); }
+  @media (min-width: 620px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+  .contact-grid h3 { margin: 0 0 .8rem; }
+  .contact-grid address { font-style: normal; color: var(--ink-2); line-height: 1.75; }
+
+  footer { border-top: 1px solid var(--hairline-2); padding-block: 2.2rem 2.8rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: baseline; }
+  footer span { font-family: var(--sans); font-size: var(--sm); letter-spacing: .04em; color: var(--muted); }
+
+  .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper);
+    padding: .6rem 1rem; z-index: 50; text-decoration: none; }
+  .skip:focus { left: 0; }
+
+  /* Back to top */
+  .totop { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 30;
+    width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--hairline-2);
+    background: color-mix(in srgb, var(--surface) 90%, transparent); backdrop-filter: blur(6px);
+    color: var(--ink-2); font-size: 1.15rem; line-height: 1; cursor: pointer;
+    display: grid; place-items: center; opacity: 0; visibility: hidden; transform: translateY(6px);
+    transition: opacity .25s, visibility .25s, transform .25s, color .2s, border-color .2s; }
+  .totop.show { opacity: 1; visibility: visible; transform: none; }
+  .totop:hover { color: var(--gold-text); border-color: var(--gold); }
+  @media (prefers-reduced-motion: reduce) { .totop { transition: color .2s, border-color .2s; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#about">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-cv" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h6"/></symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.3 2.7 2.6 6 2.6s6-1.3 6-2.6v-4.5"/><path d="M22 9v5"/></symbol>
+  <symbol id="i-rg" viewBox="0 0 24 24"><path d="M12 6.5C10.5 5.2 8.5 4.5 6 4.5H3v13h3c2 0 4 .6 6 2"/><path d="M12 6.5C13.5 5.2 15.5 4.5 18 4.5h3v13h-3c-2 0-4 .6-6 2"/><path d="M12 6.5v13"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4V10h4v1.5A5 5 0 0 1 16 8z"/><rect x="2" y="9.5" width="4" height="10.5"/><circle cx="4" cy="4.5" r="2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="2"/><path d="m3 6 9 6 9-6"/></symbol>
+  <symbol id="i-wlu" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></symbol>
+  <symbol id="i-tree" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5 15.4 17.5"/><path d="M15.4 6.5 8.6 10.5"/></symbol>
+  <symbol id="i-journal" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 3v18"/><path d="M11 8h6"/><path d="M11 12h6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#genealogy">Academic genealogy</a>
+      <a href="#more">More</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="Introduction" style="border-top:0">
+    <div class="wrap">
+      <div class="hero-grid">
+        <!-- Photo: assets/profile.jpg -->
+        <div class="portrait">
+          <img src="assets/profile.jpg" alt="M. Fabricio Perez">
+        </div>
+        <div>
+          <p class="kicker label">Wilfrid Laurier University · Waterloo, Canada</p>
+          <h1 class="name">M.&nbsp;Fabricio Perez</h1>
+          <p class="roles">
+            <b>Arthur Wesley Downe Professor of Finance</b><br>
+            Vice Dean · Lazaridis School of Business &amp; Economics
+          </p>
+          <hr class="rule-gold">
+          <div class="herolinks">
+            <a class="lead" href="assets/cv.pdf"><svg class="ic"><use href="#i-cv"/></svg>Curriculum Vitae</a>
+            <a href="https://scholar.google.com/citations?user=IoE0bAwAAAAJ&hl=en" target="_blank" rel="noopener"><svg class="ic"><use href="#i-scholar"/></svg>Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/M_Fabricio_Perez" target="_blank" rel="noopener"><svg class="ic"><use href="#i-rg"/></svg>ResearchGate</a>
+            <a href="https://www.linkedin.com/in/fabricio-perez-a5a53b5b/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-linkedin"/></svg>LinkedIn</a>
+            <a href="mailto:mperez@wlu.ca"><svg class="ic"><use href="#i-mail"/></svg>Email</a>
+            <a href="https://www.wlu.ca/academics/faculties/lazaridis-school-of-business-and-economics/faculty-profiles/m-fabricio-perez/index.html" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wlu"/></svg>Faculty profile · WLU</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><span class="label">About</span></div>
+      <div class="prose">
+        <p>
+          M. Fabricio Perez is the <strong>Arthur Wesley Downe Professor of Finance</strong> and <strong>Vice
+          Dean</strong> of the <a href="https://www.wlu.ca/academics/faculties/lazaridis-school-of-business-and-economics/index.html" target="_blank" rel="noopener">Lazaridis School of Business &amp; Economics</a>
+          at Wilfrid Laurier University, where he has been on faculty since 2008, after completing his Ph.D. in
+          Economics at Arizona State University. His work spans three connected roles: <strong>research, academic
+          leadership, and teaching</strong>, alongside service to his profession and community.
+        </p>
+        <p>
+          As a <strong>researcher</strong>, he develops and applies methods in financial econometrics, including
+          factor models and GMM, to questions in asset pricing, price discovery, corporate finance, and
+          international finance. His work has been published in journals such as the <em>Journal of Financial and
+          Quantitative Analysis</em>, <em>Journal of Financial Econometrics</em>, and <em>Journal of Banking and
+          Finance</em>, among others. His current projects sit increasingly at the intersection of policy and
+          finance, from exchange-rate responses to tariffs to the role of artificial intelligence and financial
+          literacy in markets, firms, and political systems. His international experience includes visiting
+          positions at the University of San Diego and ESSEC Business School in Paris, France, and ongoing
+          collaboration with the Universidad Andina Simón Bolívar in Quito, Ecuador.
+        </p>
+        <p>
+          As an <strong>academic leader</strong>, he serves as Vice Dean of one of Canada's largest business
+          schools, with more than 6,000 students, over 150 full-time faculty, and three campuses. He shares
+          responsibility for an $80&nbsp;million budget and directs AACSB accreditation, student experiential
+          learning, faculty research incentives, curriculum quality assurance, and multi-year academic planning.
+          Earlier roles include Finance Area Chair, Director of the Financial Services Research Centre, and
+          Coordinator of the Ph.D. in Financial Economics, and he has served on Wilfrid Laurier's Board of
+          Governors and Senate, and on the University's Finance, Investments &amp; Property Committee and
+          Investment Oversight Sub-Committee.
+        </p>
+        <p>
+          As a <strong>teacher</strong>, he has offered courses in financial econometrics and quantitative
+          methods, investments, and corporate finance across the Ph.D., Master of Finance, MBA, and undergraduate
+          programs, and has mentored doctoral students to placements in academia and industry.
+        </p>
+        <p>
+          Beyond the university, his community work includes serving as a Board Member and Treasurer of the
+          Waterloo United Soccer Club in Waterloo, Ontario.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section id="research">
+    <div class="wrap">
+      <div class="sec-head"><span class="label">Research</span></div>
+
+      <div class="subhead"><span class="label">Peer-reviewed publications</span></div>
+      <div class="publist">
+
+        <div class="field">Finance</div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jbankfin.2025.107394" target="_blank" rel="noopener"><img src="assets/journals/jbf.jpg" alt="Journal of Banking and Finance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jbankfin.2025.107394" target="_blank" rel="noopener">Signaling via Stock Splits: Evidence from Short Interest</a></h3>
+            <p class="pub-result">Short interest permanently declines after split announcements, consistent with firms using splits to relay positive, value-relevant signals that sophisticated investors act on.</p>
+            <p class="pub-cite"><span class="venue">Journal of Banking and Finance</span> 172 (2025). <span class="coauth">· with A. Shkilko, N. Tang &amp; P. van Ness</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jempfin.2021.10.002" target="_blank" rel="noopener"><img src="assets/journals/jef.jpg" alt="Journal of Empirical Finance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jempfin.2021.10.002" target="_blank" rel="noopener">Follow the Leader: Index Tracking with Factor Models</a></h3>
+            <p class="pub-result">Uses factor models to identify the compact set of stocks that best captures an index's systematic risk, enabling efficient index replication.</p>
+            <p class="pub-cite"><span class="venue">Journal of Empirical Finance</span> 64 (2021): 337–359. <span class="coauth">· with P. Jiang</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jcorpfin.2021.101980" target="_blank" rel="noopener"><img src="assets/journals/jcf.jpg" alt="Journal of Corporate Finance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jcorpfin.2021.101980" target="_blank" rel="noopener">The Evolution of Pay Premiums for Managerial Attributes</a></h3>
+            <p class="pub-result">Talent and conservatism explain executive pay over time, with the market premium for talent rising in bull markets and conservatism valued more after high-risk periods.</p>
+            <p class="pub-cite"><span class="venue">Journal of Corporate Finance</span> 69 (2021). <span class="coauth">· with S. Li</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1017/S0022109018001321" target="_blank" rel="noopener"><img src="assets/journals/jfqa.jpg" alt="Journal of Financial and Quantitative Analysis cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1017/S0022109018001321" target="_blank" rel="noopener">Estimation of Multivariate Asset Models with Jumps</a></h3>
+            <p class="pub-result">Introduces a tractable framework to estimate multivariate asset-price models with jumps and dependence, with applications to pricing and risk.</p>
+            <p class="pub-cite"><span class="venue">Journal of Financial and Quantitative Analysis</span> 54(5) (2019): 2053–2083. <span class="coauth">· with L. Ballotta, A. Loregian &amp; G. Fusai</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1561/104.00000042" target="_blank" rel="noopener"><img src="assets/journals/cfr.jpg" alt="Critical Finance Review cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1561/104.00000042" target="_blank" rel="noopener">Catering Through Nominal Share Prices Revisited</a></h3>
+            <p class="pub-result">Re-examines the catering theory of nominal share prices and finds limited support once other firm characteristics are taken into account.</p>
+            <p class="pub-cite"><span class="venue">Critical Finance Review</span> 6(1) (2017): 43–75. <span class="coauth">· with A. Shkilko</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jbankfin.2015.08.012" target="_blank" rel="noopener"><img src="assets/journals/jbf.jpg" alt="Journal of Banking and Finance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jbankfin.2015.08.012" target="_blank" rel="noopener">Factor Models for Binary Financial Data</a></h3>
+            <p class="pub-result">Develops factor models tailored to binary financial outcomes, improving estimation relative to standard linear factor approaches.</p>
+            <p class="pub-cite"><span class="venue">Journal of Banking and Finance</span> 61 (2015): S177–S188. <span class="coauth">· with A. Shkilko &amp; K. Sokolov</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jempfin.2012.10.004" target="_blank" rel="noopener"><img src="assets/journals/jef.jpg" alt="Journal of Empirical Finance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jempfin.2012.10.004" target="_blank" rel="noopener">Two-Pass Estimation of Risk Premiums with Multicollinear and Near-Invariant Betas</a></h3>
+            <p class="pub-result">Shows how multicollinear, near-constant betas distort two-pass risk-premium estimates, and proposes a correction.</p>
+            <p class="pub-cite"><span class="venue">Journal of Empirical Finance</span> 20(1) (2013): 1–17. <span class="coauth">· with S. C. Ahn &amp; C. Gadarowski</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jbankfin.2013.04.019" target="_blank" rel="noopener"><img src="assets/journals/jbf.jpg" alt="Journal of Banking and Finance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jbankfin.2013.04.019" target="_blank" rel="noopener">Dynamic Effects of Idiosyncratic Volatility and Liquidity in Corporate Bond Spreads</a></h3>
+            <p class="pub-result">Idiosyncratic volatility and liquidity jointly and dynamically drive corporate bond spreads.</p>
+            <p class="pub-cite"><span class="venue">Journal of Banking and Finance</span> 37(8) (2013): 2969–2990. <span class="coauth">· with M. Kalimipalli &amp; S. Nayak</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1093/jjfinec/nbs006" target="_blank" rel="noopener"><img src="assets/journals/jfec.jpg" alt="Journal of Financial Econometrics cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1093/jjfinec/nbs006" target="_blank" rel="noopener">Robust Two-Pass Cross-Sectional Regressions: A Minimum Distance Approach</a></h3>
+            <p class="pub-result">A minimum-distance estimator that makes two-pass cross-sectional asset-pricing tests more robust and efficient.</p>
+            <p class="pub-cite"><span class="venue">Journal of Financial Econometrics</span> 10(4) (2012): 669–701. <span class="coauth">· with S. C. Ahn &amp; C. Gadarowski</span></p>
+          </div>
+        </div>
+
+        <div class="field">International economics</div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.mulfin.2021.100728" target="_blank" rel="noopener"><img src="assets/journals/jmfm.jpg" alt="Journal of Multinational Financial Management cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.mulfin.2021.100728" target="_blank" rel="noopener">Value Creation and Value Destruction in Investor-State Dispute Arbitration</a></h3>
+            <p class="pub-result">Firms gain market value both when filing investor-state arbitration and when receiving an award, with gains often exceeding the monetary award itself.</p>
+            <p class="pub-cite"><span class="venue">Journal of Multinational Financial Management</span> 63 (2022): 100728. <span class="coauth">· with J. C. Brada, C. Chen, J. Jia &amp; A. M. Kutan</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jce.2018.10.005" target="_blank" rel="noopener"><img src="assets/journals/jce.jpg" alt="Journal of Comparative Economics cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jce.2018.10.005" target="_blank" rel="noopener">National Levels of Corruption and Foreign Direct Investment</a></h3>
+            <p class="pub-result">Home- and host-country corruption jointly shape both the level and the direction of foreign direct investment.</p>
+            <p class="pub-cite"><span class="venue">Journal of Comparative Economics</span> 47(1) (2019): 31–49. <span class="coauth">· with J. C. Brada, Z. Drabek &amp; J. Mendez</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.rfe.2017.11.002" target="_blank" rel="noopener"><img src="assets/journals/rfe.jpg" alt="Review of Financial Economics cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.rfe.2017.11.002" target="_blank" rel="noopener">Is There a Missing Factor? A Canonical Correlation Approach to Factor Models</a></h3>
+            <p class="pub-result">A canonical-correlation method tests for and detects factors omitted from standard asset-pricing models.</p>
+            <p class="pub-cite"><span class="venue">Review of Financial Economics</span> 36(4) (2018): 321–347. <span class="coauth">· with S. C. Ahn &amp; S. Dieckmann</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1016/j.jce.2011.03.007" target="_blank" rel="noopener"><img src="assets/journals/jce.jpg" alt="Journal of Comparative Economics cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1016/j.jce.2011.03.007" target="_blank" rel="noopener">Illicit Money Flows as Motives for FDI</a></h3>
+            <p class="pub-result">A share of foreign direct investment is motivated by the desire to move illicit money across borders rather than by real economic returns.</p>
+            <p class="pub-cite"><span class="venue">Journal of Comparative Economics</span> 40(1) (2012): 108–126. <span class="award">Montias Prize</span> <span class="coauth">· with J. C. Brada &amp; Z. Drabek</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1111/rode.12009" target="_blank" rel="noopener"><img src="assets/journals/rde.gif" alt="Review of Development Economics cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1111/rode.12009" target="_blank" rel="noopener">The Effect of Home-Country and Host-Country Corruption on Foreign Direct Investment</a></h3>
+            <p class="pub-result">Corruption in both the origin and the destination country shapes bilateral FDI flows, sometimes in offsetting ways.</p>
+            <p class="pub-cite"><span class="venue">Review of Development Economics</span> 16(4) (2012): 640–663. <span class="coauth">· with J. C. Brada &amp; Z. Drabek</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-cover is-icon"><svg class="pic"><use href="#i-book"/></svg></span>
+          <div class="pub-body">
+            <h3>Regional Integration in the NAFTA Area: The Case of Northeast Mexico</h3>
+            <p class="pub-result">A book-length analysis of regional economic integration under NAFTA, with a focus on Northeast Mexico.</p>
+            <p class="pub-cite"><span class="venue">Pearson Education</span> (2015). <span class="award">Book</span> <span class="coauth">· with E. Ayala, J. Chapa, G. Genna &amp; M. Treviño</span></p>
+          </div>
+        </div>
+
+        <div class="field">Insurance</div>
+
+        <div class="pub">
+          <a class="pub-cover is-icon" href="https://scholar.google.com/scholar?q=Board+Diversity+and+Risk-Taking+Kelly+Kanj+Perez" target="_blank" rel="noopener" aria-label="Journal of Insurance Issues"><svg class="pic"><use href="#i-journal"/></svg></a>
+          <div class="pub-body">
+            <h3><a href="https://scholar.google.com/scholar?q=Board+Diversity+and+Risk-Taking+Kelly+Kanj+Perez" target="_blank" rel="noopener">Board Diversity and Risk-Taking</a></h3>
+            <p class="pub-result">Ethnically diverse insurer boards adopt less risky strategies without sacrificing performance, driven by diversity in directors' uncertainty avoidance.</p>
+            <p class="pub-cite"><span class="venue">Journal of Insurance Issues</span> 47(1) (2024): 35–77. <span class="coauth">· with M. Kelly &amp; O. Kanj</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1057/s41288-020-00194-3" target="_blank" rel="noopener"><img src="assets/journals/geneva.jpg" alt="Geneva Papers on Risk and Insurance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1057/s41288-020-00194-3" target="_blank" rel="noopener">Pricing Dynamics in the Market for Catastrophe Bonds</a></h3>
+            <p class="pub-result">Documents how catastrophe-bond prices and risk premiums evolve with market conditions and underlying risk.</p>
+            <p class="pub-cite"><span class="venue">The Geneva Papers on Risk and Insurance</span> 47(1) (2020): 172–202. <span class="coauth">· with P. Carayannopoulos &amp; O. Kanj</span></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1057/gpp.2014.14" target="_blank" rel="noopener"><img src="assets/journals/geneva.jpg" alt="Geneva Papers on Risk and Insurance cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1057/gpp.2014.14" target="_blank" rel="noopener">Diversification Through CAT Bonds: Lessons from the Subprime Financial Crisis</a></h3>
+            <p class="pub-result">Catastrophe bonds provided genuine diversification benefits that held up through the subprime financial crisis.</p>
+            <p class="pub-cite"><span class="venue">The Geneva Papers on Risk and Insurance</span> 40(1) (2015): 1–28. <span class="coauth">· with P. Carayannopoulos</span></p>
+          </div>
+        </div>
+
+        <div class="field">Political science</div>
+
+        <div class="pub">
+          <a class="pub-cover" href="https://doi.org/10.1111/lamp.12252" target="_blank" rel="noopener"><img src="assets/journals/lap.gif" alt="Latin American Policy cover"></a>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1111/lamp.12252" target="_blank" rel="noopener">Spillover Effects of Quota or Parity Laws: The Case of Ecuador Women Mayors</a></h3>
+            <p class="pub-result">Gender-parity legislation roughly doubles the probability that a woman is elected mayor, spilling over from proportional to single-seat races.</p>
+            <p class="pub-cite"><span class="venue">Latin American Policy</span> 13(1) (2022): 82–103. <span class="coauth">· with S. Basabe-Serrano</span></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="subhead"><span class="label">Working papers &amp; work in progress</span></div>
+      <ul class="plain">
+        <li><span class="wp-title">Price Discovery in Option Panels: Evidence from S&amp;P 500 Index Options</span> <span class="wp-status">R&amp;R · JBF</span><div class="wp-desc">With Diego Amaya. A daily measure of each contract's contribution to price discovery shows informed traders favor short-term, at-the-money puts, and increasingly weekly options.</div></li>
+        <li><span class="wp-title">Price Discovery in the Cross Section: Leaders and Followers</span><div class="wp-desc">With S. Dehghanpour &amp; D. Amaya. A model and empirical test of which stocks lead and which follow as information disseminates under high-frequency trading.</div></li>
+        <li><span class="wp-title">When Voters Can Do the Math: Financial Literacy and Clientelism</span><div class="wp-desc">With S. Basabe-Serrano and P. Freire. Across 26 democracies, electorates with higher financial literacy have substantially less clientelistic governing parties.</div></li>
+        <li><span class="wp-title">Exchange-Rate Responses to &ldquo;Liberation Day&rdquo;</span> <span class="wp-status">Draft</span><div class="wp-desc">With J. C. Brada. An event study of 139 currencies around the April 2025 U.S. tariff announcement finds the dollar fell against most currencies.</div></li>
+        <li><span class="wp-title">Beyond Adoption: AI Intensity in Emerging-Economy SMEs</span> <span class="wp-status">Submitted</span><div class="wp-desc">With P. Freire. A new AI adoption-intensity index built from a survey of 500+ SMEs, combining tool diversity, functional breadth, duration, and governance.</div></li>
+        <li><span class="wp-title">IPO Wealth Allocation</span> <span class="wp-status">Under revision</span><div class="wp-desc">With Ning Tang. How IPO wealth is split between issuers and subscribers.</div></li>
+        <li><span class="wp-title">Linear Estimation of the Number of Latent Factors</span> <span class="wp-status">In progress</span><div class="wp-desc">Improved estimation of the number of latent factors in large financial panels; to be presented at the 2026 Econometric Society meeting.</div></li>
+        <li><span class="wp-title">Heteroskedastic-Corrected Heckman Selection Model</span> <span class="wp-status">In progress</span><div class="wp-desc">With S. Ahn. Extending the Heckman correction to settings with heteroskedasticity.</div></li>
+      </ul>
+
+      <div class="subhead"><span class="label">Selected research grants</span></div>
+      <ul class="metalist">
+        <li><span class="m-main">SSHRC Insight Grant<span class="m-sub">“Price discovery in the option market” · co-investigator, with D. Amaya</span></span><span class="m-right">$105,430 · 2022–25</span></li>
+        <li><span class="m-main">SSHRC Insight Grant<span class="m-sub">“Price Discovery in Fragmented Markets” · PI, with A. Shkilko</span></span><span class="m-right">$129,800 · 2017–24</span></li>
+        <li><span class="m-main">SSHRC Insight Development Grant<span class="m-sub">Managerial attributes &amp; executive compensation · PI, with S. Li</span></span><span class="m-right">$47,500 · 2012–14</span></li>
+        <li><span class="m-main">Arthur Wesley Downe Finance Professorship</span><span class="m-right">2015–25</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ LEADERSHIP ============ -->
+  <section id="leadership">
+    <div class="wrap">
+      <div class="sec-head"><span class="label">Leadership</span></div>
+
+      <div class="subhead"><span class="label">Academic leadership</span></div>
+      <ul class="metalist">
+        <li><span class="m-main">Vice Dean, Lazaridis School of Business &amp; Economics<span class="m-sub">Helps lead a school of 6,000+ students, 150+ faculty and three campuses; shared oversight of an $80M budget, AACSB accreditation, quality assurance and academic planning.</span></span><span class="m-right">2025–present</span></li>
+        <li><span class="m-main">Finance Area Chair<span class="m-sub">Hiring, mentoring, and program and curriculum renewal.</span></span><span class="m-right">2021–2024</span></li>
+        <li><span class="m-main">Coordinator, Ph.D. in Financial Economics</span><span class="m-right">2014–2019</span></li>
+        <li><span class="m-main">Director, Financial Services Research Centre<span class="m-sub">Fostering research and industry collaboration.</span></span><span class="m-right">2014–2020</span></li>
+      </ul>
+
+      <div class="subhead"><span class="label">Governance &amp; board service</span></div>
+      <ul class="metalist">
+        <li><span class="m-main">Board of Governors &amp; Senate, Wilfrid Laurier University<span class="m-sub">Institutional strategy, risk management and policy review.</span></span><span class="m-right">2023–2024</span></li>
+      </ul>
+      <p style="color:var(--ink-2); margin-top:1rem">
+        On the Board of Governors he served on the <strong>Finance, Investments &amp; Property Committee</strong>
+        (operating budgets, capital projects and financial policies), the <strong>Investment Oversight
+        Sub-Committee</strong> (endowment management and risk governance), and the <strong>Governance
+        Committee</strong> (board renewal, nominations and policy).
+      </p>
+
+      <div class="subhead"><span class="label">Community &amp; volunteer</span></div>
+      <ul class="metalist">
+        <li><span class="m-main">Treasurer &amp; Board Member, Waterloo United Soccer Club<span class="m-sub">Led a financial turnaround of one of Ontario's largest sports clubs, from two years of operating losses to a balanced budget, strengthening oversight, sponsorships and long-term planning.</span></span><span class="m-right">2019–present</span></li>
+        <li><span class="m-main">Internal Auditor, Government of Pichincha Province, Ecuador</span><span class="m-right">1996–2002</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ TEACHING ============ -->
+  <section id="teaching">
+    <div class="wrap">
+      <div class="sec-head"><span class="label">Teaching</span></div>
+
+      <div class="subhead"><span class="label">Graduate</span></div>
+      <div class="courses">
+        <div class="course"><span class="code">BU843</span><span><span class="cname">Seminar in Advanced Financial Econometrics</span> <span class="clevel">· Ph.D. in Financial Economics</span></span></div>
+        <div class="course"><span class="code">MFIN753</span><span><span class="cname">Economics &amp; Quantitative Methods I</span> <span class="clevel">· Master of Finance</span></span></div>
+        <div class="course"><span class="code">MFIN763</span><span><span class="cname">Economics &amp; Quantitative Methods II</span> <span class="clevel">· Master of Finance</span></span></div>
+        <div class="course"><span class="code">BU663</span><span><span class="cname">Advanced Corporate Finance</span> <span class="clevel">· Waterloo MBA</span></span></div>
+        <div class="course"><span class="code">BU603</span><span><span class="cname">Financial Management</span> <span class="clevel">· Toronto MBA</span></span></div>
+        <div class="course"><span class="code">TM703</span><span><span class="cname">Finance for Technology Firms</span> <span class="clevel">· Executive Master in Technology Management</span></span></div>
+      </div>
+
+      <div class="subhead"><span class="label">Undergraduate</span></div>
+      <div class="courses">
+        <div class="course"><span class="code">BU393</span><span><span class="cname">Financial Management II</span></span></div>
+        <div class="course"><span class="code">BU473</span><span><span class="cname">Investment Management</span></span></div>
+        <div class="course"><span class="code">BU400</span><span><span class="cname">Advanced Equity Analysis</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACADEMIC GENEALOGY ============ -->
+  <section id="genealogy">
+    <div class="wrap">
+      <div class="sec-head"><span class="label">Academic genealogy</span></div>
+
+      <p class="gene-intro">
+        An academic genealogy traces the chain of doctoral advisors, who mentored whom, back through the
+        centuries. Following the Mathematics Genealogy Project, Fabricio's scholarly lineage runs from his
+        Ph.D. advisor, Seung Chan Ahn, back through the Nobel laureate Kenneth Arrow and the statistician Harold
+        Hotelling, into a line of mathematicians that includes Poisson, Laplace, Lagrange, Leonhard Euler and the
+        Bernoullis, and further still, past Nicolaus Copernicus and Erasmus of Rotterdam, to the Persian and
+        Byzantine scholars Omar Khayyám and Avicenna. All told, it reaches back nearly a thousand years.
+      </p>
+
+      <ol class="lineage">
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/avicenna.jpg" alt="Avicenna"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Avicenna" target="_blank" rel="noopener">Avicenna (Ibn Sīnā)</a></div><div class="gen-role">Persian polymath and physician</div></div><div class="gen-year">c. 1015</div></li>
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/erasmus.jpg" alt="Erasmus of Rotterdam"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Erasmus" target="_blank" rel="noopener">Erasmus of Rotterdam</a></div><div class="gen-role">Renaissance humanist</div></div><div class="gen-year">1497</div></li>
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/copernicus.jpg" alt="Nicolaus Copernicus"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Nicolaus_Copernicus" target="_blank" rel="noopener">Nicolaus Copernicus</a></div><div class="gen-role">Astronomer</div></div><div class="gen-year">1499</div></li>
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/bernoulli.jpg" alt="Johann Bernoulli"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Johann_Bernoulli" target="_blank" rel="noopener">Johann Bernoulli</a></div><div class="gen-role">Mathematician</div></div><div class="gen-year">1694</div></li>
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/euler.jpg" alt="Leonhard Euler"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Leonhard_Euler" target="_blank" rel="noopener">Leonhard Euler</a></div><div class="gen-role">Mathematician</div></div><div class="gen-year">1726</div></li>
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/lagrange.jpg" alt="Joseph-Louis Lagrange"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange" target="_blank" rel="noopener">Joseph-Louis Lagrange</a></div><div class="gen-role">Mathematician</div></div><div class="gen-year">1754</div></li>
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/laplace.jpg" alt="Pierre-Simon Laplace"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace" target="_blank" rel="noopener">Pierre-Simon Laplace</a></div><div class="gen-role">Mathematician and astronomer</div></div><div class="gen-year">1769</div></li>
+        <li class="gen"><div class="gen-av"><img src="assets/genealogy/poisson.jpg" alt="Siméon Denis Poisson"></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" target="_blank" rel="noopener">Siméon Denis Poisson</a></div><div class="gen-role">Mathematician and physicist</div></div><div class="gen-year">1800</div></li>
+        <li class="gen"><div class="gen-av"><span class="mono">HH</span></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Harold_Hotelling" target="_blank" rel="noopener">Harold Hotelling</a></div><div class="gen-role">Statistician and economist</div></div><div class="gen-year">1924</div></li>
+        <li class="gen"><div class="gen-av"><span class="mono">KA</span></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Kenneth_Arrow" target="_blank" rel="noopener">Kenneth J. Arrow</a></div><div class="gen-role">Economist · Nobel laureate</div></div><div class="gen-year">1951</div></li>
+        <li class="gen"><div class="gen-av"><span class="mono">JK</span></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Jan_Kmenta" target="_blank" rel="noopener">Jan Kmenta</a></div><div class="gen-role">Econometrician</div></div><div class="gen-year">1964</div></li>
+        <li class="gen"><div class="gen-av"><span class="mono">PS</span></div><div><div class="gen-name"><a href="https://en.wikipedia.org/wiki/Peter_Schmidt_(economist)" target="_blank" rel="noopener">Peter Schmidt</a></div><div class="gen-role">Econometrician</div></div><div class="gen-year">1970</div></li>
+        <li class="gen"><div class="gen-av"><span class="mono">SA</span></div><div><div class="gen-name">Seung Chan Ahn</div><div class="gen-role">Econometrician · Ph.D. advisor</div></div><div class="gen-year">1990</div></li>
+        <li class="gen is-me"><div class="gen-av"><img src="assets/profile.jpg" alt="M. Fabricio Perez"></div><div><div class="gen-name">M. Fabricio Perez</div><div class="gen-role">Finance and financial econometrics</div></div><div class="gen-year">2008</div></li>
+      </ol>
+
+      <div class="linklist">
+        <a href="https://www.wlu.ca/academics/faculties/lazaridis-school-of-business-and-economics/faculty-profiles/m-fabricio-perez/academic_genealogy_html_with_links-10.html" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tree"/></svg><span>View the full interactive genealogy</span></a>
+      </div>
+      <p class="gene-source">Lineage from the Mathematics Genealogy Project (North Dakota State University and the American Mathematical Society). Portraits are in the public domain.</p>
+    </div>
+  </section>
+
+  <!-- ============ MORE ============ -->
+  <section id="more">
+    <div class="wrap">
+      <div class="sec-head"><span class="label">More</span></div>
+      <p class="gene-intro" style="color:var(--muted)">Presentations, talks, and readings will be added here.</p>
+      <!-- Add future items here (presentations, talks, readings) as .subhead + list blocks. -->
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">Contact</span>
+        <h2 class="title" style="margin-top:.7rem">Get in touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h3 class="label">Office</h3>
+          <address>
+            Lazaridis School of Business &amp; Economics<br>
+            Wilfrid Laurier University<br>
+            75 University Avenue West<br>
+            Waterloo, Ontario&nbsp; N2L 3C5, Canada<br><br>
+            <a href="mailto:mperez@wlu.ca">mperez@wlu.ca</a>
+          </address>
+        </div>
+        <div>
+          <h3 class="label">Elsewhere</h3>
+          <div class="linklist">
+            <a href="assets/cv.pdf"><svg class="ic"><use href="#i-cv"/></svg><span>Curriculum Vitae (PDF)</span></a>
+            <a href="https://scholar.google.com/citations?user=IoE0bAwAAAAJ&hl=en" target="_blank" rel="noopener"><svg class="ic"><use href="#i-scholar"/></svg><span>Google Scholar</span></a>
+            <a href="https://www.researchgate.net/profile/M_Fabricio_Perez" target="_blank" rel="noopener"><svg class="ic"><use href="#i-rg"/></svg><span>ResearchGate</span></a>
+            <a href="https://www.linkedin.com/in/fabricio-perez-a5a53b5b/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a>
+            <a href="https://www.wlu.ca/academics/faculties/lazaridis-school-of-business-and-economics/faculty-profiles/m-fabricio-perez/index.html" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wlu"/></svg><span>Faculty profile · WLU</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<button class="totop" id="toTop" type="button" aria-label="Back to top" title="Back to top">&uarr;</button>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> M. Fabricio Perez</span>
+    <span>Wilfrid Laurier University · Waterloo, Canada</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem("fp-theme");
+      if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+    } catch (e) {}
+    var btn = document.getElementById("themeBtn");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        var isDark = root.getAttribute("data-theme") === "dark" ||
+          (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = isDark ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("fp-theme", next); } catch (e) {}
+      });
+    }
+    var y = document.getElementById("yr");
+    if (y) y.textContent = new Date().getFullYear();
+
+    var top = document.getElementById("toTop");
+    if (top) {
+      var onScroll = function () {
+        if (window.pageYOffset > 500) top.classList.add("show");
+        else top.classList.remove("show");
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      top.addEventListener("click", function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      });
+    }
+  })();
+</script>
+</body>
+</html>
