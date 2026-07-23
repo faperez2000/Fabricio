@@ -34,13 +34,14 @@
 
     --maxw: 1000px;
     --readw: 800px;
+    --railw: 340px;   /* width of the News & Notes side rail on desktop */
     --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
     --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
     --sm:    0.78rem;
     --base:  1.05rem;
     --title: 1.35rem;
-    --name:  clamp(1.7rem, 3.6vw, 2.3rem);
+    --name:  clamp(1.36rem, 2.9vw, 1.84rem);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -235,6 +236,36 @@
     padding: .6rem 1rem; z-index: 50; text-decoration: none; }
   .skip:focus { left: 0; }
 
+  /* ---------- News & Notes rail ----------
+     Mobile / narrow: a normal section right after the hero.
+     Desktop (>= 1240px): a fixed full-height rail pinned to the right;
+     body gains padding-right so the main column never sits under it. */
+  .news-rail { border-top: 1px solid var(--hairline); scroll-margin-top: 62px;
+    padding-block: clamp(1.8rem, 4.5vw, 2.6rem); }
+  .news-item { display: grid; grid-template-columns: 40px 1fr; gap: 0 .85rem; align-items: start;
+    padding: .95rem 0; border-top: 1px solid var(--hairline); max-width: var(--readw); }
+  .news-item.first { border-top: 0; padding-top: 0; }
+  .news-ic { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; margin-top: .2rem;
+    background: var(--gold-soft); border: 1px solid var(--hairline-2); display: grid; place-items: center; }
+  .news-ic img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.9); }
+  .news-ic .ic { width: 17px; height: 17px; color: var(--gold-text); }
+  .news-body { min-width: 0; }
+  .news-date { display: block; font-family: var(--sans); font-size: .68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+    font-variant-numeric: tabular-nums; margin-bottom: .15rem; }
+  .news-title { color: var(--ink); font-weight: 700; line-height: 1.35; }
+  .news-note { color: var(--ink-2); font-size: .92rem; line-height: 1.55; margin: .2rem 0 0; }
+
+  @media (min-width: 1240px) {
+    body { padding-right: var(--railw); }
+    .news-rail { position: fixed; top: 0; right: 0; bottom: 0; width: var(--railw);
+      overflow-y: auto; z-index: 15; border-top: 0; border-left: 1px solid var(--hairline);
+      background: var(--surface); padding: 1.7rem 0 2.4rem; }
+    .news-rail .wrap { padding-inline: 1.6rem; }
+    .nav-links a[href="#news"] { display: none; } /* rail is always visible, link is redundant */
+    .totop { right: calc(var(--railw) + 1.2rem); }
+  }
+
   /* Back to top */
   .totop { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 30;
     width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--hairline-2);
@@ -261,16 +292,17 @@
   <symbol id="i-tree" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5 15.4 17.5"/><path d="M15.4 6.5 8.6 10.5"/></symbol>
   <symbol id="i-journal" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 3v18"/><path d="M11 8h6"/><path d="M11 12h6"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+  <symbol id="i-rank" viewBox="0 0 24 24"><path d="M3 21h18"/><rect x="4" y="12" width="4" height="9"/><rect x="10" y="5" width="4" height="16"/><rect x="16" y="15" width="4" height="6"/></symbol>
 </defs></svg>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <nav class="nav-links" aria-label="Sections">
+      <a href="#news">News</a>
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#leadership">Leadership</a>
       <a href="#teaching">Teaching</a>
-      <a href="#genealogy">Academic genealogy</a>
       <a href="#more">More</a>
       <a href="#contact">Contact</a>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
@@ -298,6 +330,7 @@
           <hr class="rule-gold">
           <div class="herolinks">
             <a class="lead" href="assets/cv.pdf"><svg class="ic"><use href="#i-cv"/></svg>Curriculum Vitae</a>
+            <a href="assets/cv-es.pdf" hreflang="es"><svg class="ic"><use href="#i-cv"/></svg>CV en español</a>
             <a href="https://scholar.google.com/citations?user=IoE0bAwAAAAJ&hl=en" target="_blank" rel="noopener"><svg class="ic"><use href="#i-scholar"/></svg>Google Scholar</a>
             <a href="https://www.researchgate.net/profile/M_Fabricio_Perez" target="_blank" rel="noopener"><svg class="ic"><use href="#i-rg"/></svg>ResearchGate</a>
             <a href="https://www.linkedin.com/in/fabricio-perez-a5a53b5b/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-linkedin"/></svg>LinkedIn</a>
@@ -308,6 +341,44 @@
       </div>
     </div>
   </section>
+
+  <!-- ============ NEWS & NOTES (side rail) ============ -->
+  <!-- Desktop: pinned to the right edge, always visible. Mobile: appears here, right after the hero.
+       To add an item: copy one .news-item block, place it at the top (newest first), and keep the
+       extra class "first" only on the topmost item. The left circle takes either an icon
+       (<svg class="ic"><use href="#i-..."/></svg>) or a small square image from assets/. -->
+  <aside id="news" class="news-rail" aria-label="News and notes">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:1.1rem"><span class="label">News &amp; Notes</span></div>
+
+      <div class="news-item first">
+        <span class="news-ic"><svg class="ic"><use href="#i-rank"/></svg></span>
+        <div class="news-body">
+          <span class="news-date">Rankings</span>
+          <span class="news-title"><a href="https://faperez2000.github.io/Finance-rankings/" target="_blank" rel="noopener">Lazaridis Finance: top 10 in Canada</a></span>
+          <p class="news-note">The Finance Area consistently ranks among Canada's top 10 by publications in the leading finance journals. Explore the rankings.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <span class="news-ic"><svg class="ic"><use href="#i-linkedin"/></svg></span>
+        <div class="news-body">
+          <span class="news-date">Jul 2026</span>
+          <span class="news-title"><a href="https://www.linkedin.com/posts/fabricio-perez-a5a53b5b_i-was-very-happy-to-be-invited-to-the-lazaridis-activity-7484369213940342784-H1ZM" target="_blank" rel="noopener">LazSoc Presidents' Retreat: a success</a></span>
+          <p class="news-note">Great energy from the student leaders behind campus life at the first Presidents' Council meeting of the year. Read the post on LinkedIn.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <span class="news-ic"><img src="assets/genealogy/avicenna.jpg" alt=""></span>
+        <div class="news-body">
+          <span class="news-date">c. 1015</span>
+          <span class="news-title"><a href="#genealogy">My academic lineage: 1,000 years deep</a></span>
+          <p class="news-note">Advisor by advisor, from a Nobel laureate through Euler and Copernicus all the way to Avicenna. Follow the full timeline below.</p>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <!-- ============ ABOUT ============ -->
   <section id="about">
@@ -691,6 +762,7 @@
           <h3 class="label">Elsewhere</h3>
           <div class="linklist">
             <a href="assets/cv.pdf"><svg class="ic"><use href="#i-cv"/></svg><span>Curriculum Vitae (PDF)</span></a>
+            <a href="assets/cv-es.pdf" hreflang="es"><svg class="ic"><use href="#i-cv"/></svg><span>Curriculum Vitae en español (PDF)</span></a>
             <a href="https://scholar.google.com/citations?user=IoE0bAwAAAAJ&hl=en" target="_blank" rel="noopener"><svg class="ic"><use href="#i-scholar"/></svg><span>Google Scholar</span></a>
             <a href="https://www.researchgate.net/profile/M_Fabricio_Perez" target="_blank" rel="noopener"><svg class="ic"><use href="#i-rg"/></svg><span>ResearchGate</span></a>
             <a href="https://www.linkedin.com/in/fabricio-perez-a5a53b5b/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a>
